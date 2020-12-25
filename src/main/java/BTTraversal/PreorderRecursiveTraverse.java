@@ -16,16 +16,17 @@ public class PreorderRecursiveTraverse {
         }
     }
 
-    List<Integer> result = new ArrayList<Integer>();
+    private void preorderTraversal(TreeNode root, List<Integer> answer) {
+        if (root == null) {
+            return;
+        }
+        answer.add(root.val);                   // visit the root
+        preorderTraversal(root.left, answer);   // traverse left subtree
+        preorderTraversal(root.right, answer);  // traverse right subtree
+    }
     public List<Integer> preorderTraversal(TreeNode root) {
-
-        if(root==null) return result;
-
-        result.add(root.val);
-
-        preorderTraversal(root.left);
-        preorderTraversal(root.right);
-
-        return result;
+        List<Integer> answer = new ArrayList<>();
+        preorderTraversal(root, answer);
+        return answer;
     }
 }

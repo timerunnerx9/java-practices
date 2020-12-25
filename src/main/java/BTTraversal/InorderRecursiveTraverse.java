@@ -19,23 +19,17 @@ public class InorderRecursiveTraverse {
       }
   }
 
-    public List<Integer> inorderTraversal(TreeNode root) {
-
-        List<Integer> res = new ArrayList<Integer>();
-        helper(root,res);
-        return res;
-
+    private void inorderTraversal(TreeNode root, List<Integer> answer) {
+        if (root == null) {
+            return;
+        }
+        inorderTraversal(root.left, answer);   // traverse left subtree
+        answer.add(root.val);                  // visit the root
+        inorderTraversal(root.right, answer);  // traverse right subtree
     }
-    public void helper(TreeNode node, List res){
-      if(node!=null){
-          if(node.left!=null){
-              helper(node.left,res);
-          }
-          res.add(node.val);
-
-          if(node.right!=null){
-              helper(node.right,res);
-          }
-      }
+    public List<Integer> inorderTraversal(TreeNode root) {
+        List<Integer> answer = new ArrayList<>();
+        inorderTraversal(root, answer);
+        return answer;
     }
 }

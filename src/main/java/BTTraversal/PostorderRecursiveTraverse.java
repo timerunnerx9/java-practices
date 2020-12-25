@@ -26,24 +26,18 @@ public class PostorderRecursiveTraverse {
         }
     }
 
-    public List<Integer> postorderTraversal(TreeNode root) {
-        List<Integer> res = new ArrayList<>();
-        if(root == null) return res;
-        helper(root,res);
-        return res;
-
+    private void postorderTraversal(TreeNode root, List<Integer> answer) {
+        if (root == null) {
+            return;
+        }
+        postorderTraversal(root.left, answer);   // traverse left subtree
+        postorderTraversal(root.right, answer);  // traverse right subtree
+        answer.add(root.val);                    // visit the root
     }
-
-    public void helper(TreeNode node ,List res){
-        if(node.left!=null){
-            helper(node.left, res);
-        }
-
-        if(node.right!=null){
-            helper(node.right,res);
-        }
-
-        res.add(node.val);
+    public List<Integer> postorderTraversal(TreeNode root) {
+        List<Integer> answer = new ArrayList<>();
+        postorderTraversal(root, answer);
+        return answer;
     }
 }
 

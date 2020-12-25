@@ -21,11 +21,14 @@ public class InorderIterativeTraverse {
 
     public List<Integer> inorderTraversal(TreeNode root){
 
+
         List<Integer> res = new ArrayList<Integer>();
         Stack<TreeNode> stack = new Stack<TreeNode>();
         TreeNode curr = root;
 
         while(curr!=null || !stack.isEmpty()){
+            //left, mid, right
+            // if a node has no left child, add the node, then the right child
             while(curr!=null){
                 stack.push(curr);
                 curr = curr.left;

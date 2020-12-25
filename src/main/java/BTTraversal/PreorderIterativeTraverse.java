@@ -22,11 +22,16 @@ public class PreorderIterativeTraverse {
 
         stack.add(root);
         while(!stack.isEmpty()){
-            TreeNode node = stack.pollLast();
+            //get the last element eg, [1,2,3] this will return 3
+            TreeNode node = stack.pollLast(); // or stack.pop
             output.add(node.val);
+
+            //right first
             if(root.right!=null){
                 stack.add(root.right);
             }
+
+            //left second, the poll last will return left first
             if(root.left!=null){
                 stack.add(root.left);
             }
