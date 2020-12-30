@@ -29,6 +29,8 @@ public class LevelOrderIterativeTraverse {
         while(!queue.isEmpty()){
             ArrayList<Integer> result = new ArrayList<>();
             int queueSize = queue.size();
+            // can's use queue.size() in the for loop because it will change dynamically and the
+            // outcome will be wrong
             for(int i = 0; i< queueSize; i++){
                 TreeNode curr = queue.poll();
                 result.add(curr.val);

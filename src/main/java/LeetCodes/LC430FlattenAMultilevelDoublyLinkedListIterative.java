@@ -20,10 +20,10 @@ public class LC430FlattenAMultilevelDoublyLinkedListIterative {
 
 
 
-    public Node flatten(Node head){
+    public Node flatten(Node head) {
+        Stack<Node> stack = new Stack();
 
         Node curr = head;
-        Stack<Node> stack = new Stack<Node>();
 
         while(curr!=null){
             if(curr.child!=null){
@@ -35,8 +35,9 @@ public class LC430FlattenAMultilevelDoublyLinkedListIterative {
                 curr.child = null;
             }else if(curr.next==null && !stack.isEmpty()){
                 curr.next = stack.pop();
-                if(curr.next!=null) curr.next.prev = curr;
+                curr.next.prev = curr;
             }
+
             curr = curr.next;
         }
 
