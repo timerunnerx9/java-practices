@@ -1,19 +1,18 @@
+import java.io.File;
+import java.io.IOException;
+
 public class Testing {
     public static void main(String[] args) {
 
+
+        File file1 = new File("C:\\Users\\davec\\test1.txt");
+//        try {
+//            file1.createNewFile();
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+        System.out.println(file1.getAbsolutePath());
     }
 
-    public int fib(int N){
 
-        if(N==0) return 0;
-        if(N==1) return 1;
-
-        int[] dp = new int[N+1];
-
-        for(int i = 2; i < N; i++){
-            dp[i] = dp[i-1] + dp[i-2];
-        }
-
-        return dp[N];
-    }
 }
