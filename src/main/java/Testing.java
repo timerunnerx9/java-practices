@@ -5,13 +5,7 @@ public class Testing {
     public static void main(String[] args) {
 
 
-        File file1 = new File("C:\\Users\\davec\\test1.txt");
-//        try {
-//            file1.createNewFile();
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-        System.out.println(file1.getAbsolutePath());
+        System.out.println('a'-'a');
     }
 
 
