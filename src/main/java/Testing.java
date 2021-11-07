@@ -5,7 +5,7 @@ public class Testing {
     public static void main(String[] args) {
 
 
-        System.out.println('a'-'a');
+        System.out.println(76/10);
     }
 
 
